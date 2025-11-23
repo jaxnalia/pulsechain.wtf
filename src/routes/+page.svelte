@@ -42,7 +42,7 @@
                 href="https://provex.info/#/?ref=0xb770163A0CFDE7F5F3C5bd6EAb7587eC64b8837b"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl border border-zinc-800/60 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-purple-900/20"
+                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl border border-zinc-800/60 overflow-hidden transition-all duration-300 hover:border-zinc-700"
             >
                 <div class="absolute inset-0">
                     <img
@@ -55,9 +55,9 @@
                     ></div>
                 </div>
 
-                <div class="relative flex items-center gap-5">
+                <div class="relative flex items-center gap-5 duration-300">
                     <div
-                        class="p-2.5 rounded-xl bg-white/10 backdrop-blur-md text-white ring-1 ring-white/20"
+                        class="p-2.5 rounded-xl bg-zinc-800/50 text-zinc-400 group-hover:bg-zinc-800 group-hover:text-white transition-colors duration-300"
                     >
                         <img
                             src="https://provex.info/provex.png"
@@ -67,7 +67,7 @@
                     </div>
                     <div class="flex flex-col text-left gap-0.5">
                         <span
-                            class="text-lg sm:text-xl font-bold tracking-wide text-white"
+                            class="text-lg sm:text-xl font-semibold tracking-wide text-zinc-100 group-hover:text-white"
                             >ProveX Sacrifice</span
                         >
                         <span
@@ -144,7 +144,43 @@
                         >
                         <span
                             class="text-sm text-zinc-500 group-hover:text-zinc-400 transition-colors"
-                            >Stake to mint your own yield</span
+                            >Miners earn on average ~36% APY</span
+                        >
+                    </div>
+                </div>
+
+                <div
+                    class="text-zinc-700 group-hover:text-zinc-300 transition-colors transform group-hover:translate-x-1 duration-300"
+                >
+                    <ArrowRight size={20} />
+                </div>
+            </a>
+
+            <!-- Bridge -->
+            <a
+                href="https://libertyswap.finance"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
+            >
+                <div class="flex items-center gap-5">
+                    <div
+                        class="p-2.5 rounded-xl bg-zinc-800/50 text-zinc-400 group-hover:bg-zinc-800 group-hover:text-white transition-colors duration-300 ring-1 ring-white/5"
+                    >
+                        <img
+                            src="https://libertyswap.finance/android-icon-192x192.png"
+                            alt="Liberty Swap"
+                            class="w-8 h-8"
+                        />
+                    </div>
+                    <div class="flex flex-col text-left gap-0.5">
+                        <span
+                            class="text-lg sm:text-xl font-semibold tracking-wide text-zinc-100 group-hover:text-white"
+                            >Bridge</span
+                        >
+                        <span
+                            class="text-sm text-zinc-500 group-hover:text-zinc-400 transition-colors"
+                            >Bridge assets across chains</span
                         >
                     </div>
                 </div>
@@ -165,9 +201,13 @@
             >
                 <div class="flex items-center gap-5">
                     <div
-                        class="p-3.5 rounded-xl bg-zinc-800/50 text-zinc-400 group-hover:bg-zinc-800 group-hover:text-white transition-colors duration-300 ring-1 ring-white/5"
+                        class="p-2.5 rounded-xl bg-zinc-800/50 text-zinc-400 group-hover:bg-zinc-800 group-hover:text-white transition-colors duration-300 ring-1 ring-white/5"
                     >
-                        <Activity size={24} strokeWidth={2} />
+                        <img
+                            src="https://scan.pulsechain.box/assets/configs/network_logo_dark.png"
+                            alt="pulsechain.box"
+                            class="w-8 h-8"
+                        />
                     </div>
                     <div class="flex flex-col text-left gap-0.5">
                         <span
@@ -177,38 +217,6 @@
                         <span
                             class="text-sm text-zinc-500 group-hover:text-zinc-400 transition-colors"
                             >View transactions and blocks</span
-                        >
-                    </div>
-                </div>
-
-                <div
-                    class="text-zinc-700 group-hover:text-zinc-300 transition-colors transform group-hover:translate-x-1 duration-300"
-                >
-                    <ArrowRight size={20} />
-                </div>
-            </a>
-
-            <!-- Bridge -->
-            <a
-                href="https://bridge.pulsechain.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
-            >
-                <div class="flex items-center gap-5">
-                    <div
-                        class="p-3.5 rounded-xl bg-zinc-800/50 text-zinc-400 group-hover:bg-zinc-800 group-hover:text-white transition-colors duration-300 ring-1 ring-white/5"
-                    >
-                        <Layers size={24} strokeWidth={2} />
-                    </div>
-                    <div class="flex flex-col text-left gap-0.5">
-                        <span
-                            class="text-lg sm:text-xl font-semibold tracking-wide text-zinc-100 group-hover:text-white"
-                            >Bridge</span
-                        >
-                        <span
-                            class="text-sm text-zinc-500 group-hover:text-zinc-400 transition-colors"
-                            >Bridge assets from Ethereum</span
                         >
                     </div>
                 </div>
@@ -304,7 +312,7 @@
                         >
                         <span
                             class="text-sm text-zinc-500 group-hover:text-zinc-400 transition-colors"
-                            >Become a validator</span
+                            >Run a validator</span
                         >
                     </div>
                 </div>
