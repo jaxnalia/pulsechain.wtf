@@ -37,33 +37,45 @@
         </header>
 
         <main class="flex flex-col gap-4 w-full">
-            <!-- Official Website -->
+            <!-- Featured Item -->
             <a
                 href="https://provex.info/#/?ref=0xb770163A0CFDE7F5F3C5bd6EAb7587eC64b8837b"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-black/50"
+                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl border border-zinc-800/60 overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-purple-900/20"
             >
-                <div class="flex items-center gap-5">
+                <div class="absolute inset-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&w=800&q=80"
+                        alt="Featured Background"
+                        class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
+                    />
                     <div
-                        class="p-3.5 rounded-xl bg-zinc-800/50 text-zinc-400 group-hover:bg-zinc-800 group-hover:text-white transition-colors duration-300 ring-1 ring-white/5"
+                        class="absolute inset-0 bg-zinc-950/60 group-hover:bg-zinc-950/50 transition-colors duration-300"
+                    ></div>
+                </div>
+
+                <div class="relative flex items-center gap-5">
+                    <div
+                        class="p-2.5 rounded-xl bg-white/10 backdrop-blur-md text-white ring-1 ring-white/20"
                     >
-                        <Globe size={24} strokeWidth={2} />
+                        <img
+                            src="https://provex.info/provex.png"
+                            alt="Provex Sacrifice"
+                            class="w-8 h-8"
+                        />
                     </div>
                     <div class="flex flex-col text-left gap-0.5">
                         <span
-                            class="text-lg sm:text-xl font-semibold tracking-wide text-zinc-100 group-hover:text-white"
+                            class="text-lg sm:text-xl font-bold tracking-wide text-white"
                             >ProveX Sacrifice</span
                         >
-                        <span
-                            class="text-sm text-zinc-500 group-hover:text-zinc-400 transition-colors"
+                        <span class="text-sm text-zinc-200"
                             >Zero-knowledge peer-to-peer fiat onramp</span
                         >
                     </div>
                 </div>
 
                 <div
-                    class="text-zinc-700 group-hover:text-zinc-300 transition-colors transform group-hover:translate-x-1 duration-300"
+                    class="relative text-white/80 group-hover:text-white transition-colors transform group-hover:translate-x-1 duration-300"
                 >
                     <ArrowRight size={20} />
                 </div>
@@ -78,9 +90,13 @@
             >
                 <div class="flex items-center gap-5">
                     <div
-                        class="p-3.5 rounded-xl bg-zinc-800/50 text-zinc-400 group-hover:bg-zinc-800 group-hover:text-white transition-colors duration-300 ring-1 ring-white/5"
+                        class="p-2.5 rounded-xl bg-zinc-800/50 text-zinc-400 group-hover:bg-zinc-800 group-hover:text-white transition-colors duration-300 ring-1 ring-white/5"
                     >
-                        <Globe size={24} strokeWidth={2} />
+                        <img
+                            src="https://app.pulsex.com/icon.png"
+                            alt="PulseX"
+                            class="w-8 h-8"
+                        />
                     </div>
                     <div class="flex flex-col text-left gap-0.5">
                         <span
@@ -110,9 +126,13 @@
             >
                 <div class="flex items-center gap-5">
                     <div
-                        class="p-3.5 rounded-xl bg-zinc-800/50 text-zinc-400 group-hover:bg-zinc-800 group-hover:text-white transition-colors duration-300 ring-1 ring-white/5"
+                        class="p-2.5 rounded-xl bg-zinc-800/50 text-zinc-400 group-hover:bg-zinc-800 group-hover:text-white transition-colors duration-300 ring-1 ring-white/5"
                     >
-                        <Globe size={24} strokeWidth={2} />
+                        <img
+                            src="https://go.hex.com/icon.png"
+                            alt="HEX"
+                            class="w-8 h-8"
+                        />
                     </div>
                     <div class="flex flex-col text-left gap-0.5">
                         <span
@@ -197,7 +217,7 @@
                 </div>
             </a>
 
-            <!-- GitHub -->
+            <!-- GitHub
             <a
                 href="https://github.com/pulsechain"
                 target="_blank"
@@ -227,10 +247,10 @@
                 >
                     <ArrowRight size={20} />
                 </div>
-            </a>
+            </a> -->
 
             <!-- Twitter -->
-            <a
+            <!-- <a
                 href="https://twitter.com/pulsechain"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -259,7 +279,7 @@
                 >
                     <ArrowRight size={20} />
                 </div>
-            </a>
+            </a> -->
 
             <!-- Validator Info -->
             <a
