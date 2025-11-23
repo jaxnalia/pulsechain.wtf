@@ -108,7 +108,7 @@
                         >
                         <span
                             class="text-sm text-zinc-500 group-hover:text-zinc-400 transition-colors"
-                            >Swap tokens and provide liquidity</span
+                            >The most liquid DEX on PulseChain</span
                         >
                     </div>
                 </div>
@@ -180,7 +180,7 @@
                         >
                         <span
                             class="text-sm text-zinc-500 group-hover:text-zinc-400 transition-colors"
-                            >Bridge assets across chains</span
+                            >Swap assets privately across chains</span
                         >
                     </div>
                 </div>
