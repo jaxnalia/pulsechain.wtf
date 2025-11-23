@@ -42,7 +42,7 @@
                 href="https://provex.info/#/?ref=0xb770163A0CFDE7F5F3C5bd6EAb7587eC64b8837b"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl border border-zinc-800/60 overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-purple-900/20"
+                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl border border-zinc-800/60 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-purple-900/20"
             >
                 <div class="absolute inset-0">
                     <img
@@ -70,14 +70,15 @@
                             class="text-lg sm:text-xl font-bold tracking-wide text-white"
                             >ProveX Sacrifice</span
                         >
-                        <span class="text-sm text-zinc-200"
+                        <span
+                            class="text-sm text-zinc-500 group-hover:text-zinc-400 transition-colors"
                             >Zero-knowledge peer-to-peer fiat onramp</span
                         >
                     </div>
                 </div>
 
                 <div
-                    class="relative text-white/80 group-hover:text-white transition-colors transform group-hover:translate-x-1 duration-300"
+                    class="text-zinc-700 group-hover:text-zinc-300 transition-colors transform group-hover:translate-x-1 duration-300"
                 >
                     <ArrowRight size={20} />
                 </div>
@@ -88,7 +89,7 @@
                 href="https://app.pulsex.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-black/50"
+                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
             >
                 <div class="flex items-center gap-5">
                     <div
@@ -124,7 +125,7 @@
                 href="https://go.hex.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-black/50"
+                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
             >
                 <div class="flex items-center gap-5">
                     <div
@@ -160,7 +161,7 @@
                 href="https://scan.pulsechain.box"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-black/50"
+                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
             >
                 <div class="flex items-center gap-5">
                     <div
@@ -192,7 +193,7 @@
                 href="https://bridge.pulsechain.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-black/50"
+                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
             >
                 <div class="flex items-center gap-5">
                     <div
@@ -224,7 +225,7 @@
                 href="https://github.com/pulsechain"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-black/50"
+                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
             >
                 <div class="flex items-center gap-5">
                     <div
@@ -256,7 +257,7 @@
                 href="https://twitter.com/pulsechain"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-black/50"
+                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
             >
                 <div class="flex items-center gap-5">
                     <div
@@ -288,7 +289,7 @@
                 href="https://launchpad.pulsechain.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-black/50"
+                class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
             >
                 <div class="flex items-center gap-5">
                     <div
