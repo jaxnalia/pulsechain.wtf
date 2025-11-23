@@ -40,6 +40,8 @@
             <!-- Featured Item -->
             <a
                 href="https://provex.info/#/?ref=0xb770163A0CFDE7F5F3C5bd6EAb7587eC64b8837b"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="group relative flex items-center justify-between p-5 sm:p-6 rounded-2xl border border-zinc-800/60 overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-purple-900/20"
             >
                 <div class="absolute inset-0">
