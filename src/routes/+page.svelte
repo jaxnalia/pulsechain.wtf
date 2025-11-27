@@ -1,6 +1,5 @@
 <script lang="ts">
     import {
-        Github,
         Twitter,
         Globe,
         Mail,
@@ -11,6 +10,8 @@
         Cpu,
         Rocket,
     } from "lucide-svelte";
+    import { FontAwesomeIcon } from "@fortawesome/svelte-fontawesome";
+    import { faGithub } from "@fortawesome/free-brands-svg-icons";
 </script>
 
 <div
@@ -374,7 +375,22 @@
         </main>
 
         <footer class="font-poppins mt-8 text-center text-zinc-600 text-sm">
-            <p>© 2025 PulseChain Community.</p>
+            <div class="flex items-center justify-center gap-2">
+                <div class="">
+                    © 2025 PulseChain.wtf
+                    <!-- <span class="text-lg px-2"> • </span>
+                    <a
+                        href="https://github.com/jaxnalia/pulsechain.wtf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center text-zinc-600 hover:text-zinc-400 transition-colors duration-200"
+                        aria-label="View source on GitHub"
+                    >
+                        <FontAwesomeIcon icon={faGithub} class="w-3 h-3 pr-1" />
+                        GitHub
+                    </a> -->
+                </div>
+            </div>
         </footer>
     </div>
 </div>
