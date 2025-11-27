@@ -5,6 +5,7 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['"Avenir Next"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                poppins: ['Poppins', 'sans-serif'],
             },
         },
     },
