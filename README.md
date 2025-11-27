@@ -1,38 +1,15 @@
-# sv
+## How to add a link
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+### Requirements
+- Project must be on PulseChain
+- Project must be legitimate with available information
+- High-quality logo (minimum 256x256px)
 
-## Creating a project
+### Simple Process
+1. **Fork this repository**
+2. **Edit lnik list**: `blockchains/pulsechain/assets/0xYOUR_TOKEN_ADDRESS/`
+3. **Add required files**:
+   - `logo.png` (256x256px minimum, PNG format)
+4. **Submit a pull request**
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+We will review and merge legitimate token additions. For detailed link format, see existing links in the repository.
