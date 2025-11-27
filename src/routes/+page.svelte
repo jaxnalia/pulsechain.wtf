@@ -9,6 +9,7 @@
         Activity,
         Layers,
         Cpu,
+        Rocket,
     } from "lucide-svelte";
 </script>
 
@@ -303,12 +304,12 @@
                     <div
                         class="p-3.5 rounded-xl bg-zinc-800/50 text-zinc-400 group-hover:bg-zinc-800 group-hover:text-white transition-colors duration-300 ring-1 ring-white/5"
                     >
-                        <Cpu size={24} strokeWidth={2} />
+                        <Rocket size={24} strokeWidth={2} />
                     </div>
                     <div class="flex flex-col text-left gap-0.5">
                         <span
                             class="text-lg sm:text-xl font-semibold tracking-wide text-zinc-100 group-hover:text-white"
-                            >Validator Info</span
+                            >Launchpad</span
                         >
                         <span
                             class="text-sm font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
