@@ -43,7 +43,7 @@
                 href="https://leantoken.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="font-poppins group relative flex items-center justify-between p-2.5 sm:p-6 rounded-2xl border border-zinc-800/60 overflow-hidden transition-all duration-300 hover:border-zinc-700"
+                class="font-poppins group relative flex items-center justify-between p-2.5 rounded-2xl border border-zinc-800/60 overflow-hidden transition-all duration-300 hover:border-zinc-700"
             >
                 <div class="absolute inset-0">
                     <img
@@ -68,7 +68,7 @@
                     </div>
                     <div class="flex flex-col text-left gap-0.5">
                         <span
-                            class="text-lg sm:text-xl font-semibold tracking-wide text-zinc-100 group-hover:text-white"
+                            class="text-lg font-semibold tracking-wide text-zinc-100 group-hover:text-white"
                             >LEAN Token</span
                         >
                         <span
@@ -90,7 +90,7 @@
                 href="https://provex.info/#/?ref=0xb770163A0CFDE7F5F3C5bd6EAb7587eC64b8837b"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="font-poppins group relative flex items-center justify-between p-2.5 sm:p-6 rounded-2xl border border-zinc-800/60 overflow-hidden transition-all duration-300 hover:border-zinc-700"
+                class="font-poppins group relative flex items-center justify-between p-2.5 rounded-2xl border border-zinc-800/60 overflow-hidden transition-all duration-300 hover:border-zinc-700"
             >
                 <div class="absolute inset-0">
                     <img
@@ -115,11 +115,11 @@
                     </div>
                     <div class="flex flex-col text-left gap-0.5">
                         <span
-                            class="text-lg sm:text-xl font-semibold tracking-wide text-zinc-100 group-hover:text-white"
+                            class="text-lg font-semibold tracking-wide text-zinc-100 group-hover:text-white"
                             >ProveX Sacrifice</span
                         >
                         <span
-                            class="text-xs sm:text-sm font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
+                            class="text-xs font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
                             >Zero-knowledge peer-to-peer fiat onramp</span
                         >
                     </div>
@@ -137,7 +137,7 @@
                 href="https://app.pulsex.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="font-poppins group relative flex items-center justify-between p-2.5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
+                class="font-poppins group relative flex items-center justify-between p-2.5 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
             >
                 <div class="flex items-center gap-5">
                     <div
@@ -151,11 +151,11 @@
                     </div>
                     <div class="flex flex-col text-left gap-0.5">
                         <span
-                            class="text-lg sm:text-xl font-semibold tracking-wide text-zinc-100 group-hover:text-white"
+                            class="text-lg font-semibold tracking-wide text-zinc-100 group-hover:text-white"
                             >PulseX</span
                         >
                         <span
-                            class="text-xs sm:text-sm font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
+                            class="text-xs font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
                             >The most liquid DEX on PulseChain</span
                         >
                     </div>
@@ -173,7 +173,7 @@
                 href="https://go.hex.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="font-poppins group relative flex items-center justify-between p-2.5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
+                class="font-poppins group relative flex items-center justify-between p-2.5 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
             >
                 <div class="flex items-center gap-5">
                     <div
@@ -187,11 +187,11 @@
                     </div>
                     <div class="flex flex-col text-left gap-0.5">
                         <span
-                            class="text-lg sm:text-xl font-semibold tracking-wide text-zinc-100 group-hover:text-white"
+                            class="text-lg font-semibold tracking-wide text-zinc-100 group-hover:text-white"
                             >HEX</span
                         >
                         <span
-                            class="text-xs sm:text-sm font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
+                            class="text-xs font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
                             >Miners earn on average ~36% APY</span
                         >
                     </div>
@@ -209,7 +209,7 @@
                 href="https://libertyswap.finance"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="font-poppins group relative flex items-center justify-between p-2.5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
+                class="font-poppins group relative flex items-center justify-between p-2.5 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
             >
                 <div class="flex items-center gap-5">
                     <div
@@ -223,11 +223,11 @@
                     </div>
                     <div class="flex flex-col text-left gap-0.5">
                         <span
-                            class="text-lg sm:text-xl font-semibold tracking-wide text-zinc-100 group-hover:text-white"
+                            class="text-lg font-semibold tracking-wide text-zinc-100 group-hover:text-white"
                             >Liberty Swap</span
                         >
                         <span
-                            class="text-xs sm:text-sm font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
+                            class="text-xs font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
                             >Swap assets privately across chains</span
                         >
                     </div>
@@ -245,7 +245,7 @@
                 href="https://scan.pulsechain.box"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="font-poppins group relative flex items-center justify-between p-2.5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
+                class="font-poppins group relative flex items-center justify-between p-2.5 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
             >
                 <div class="flex items-center gap-5">
                     <div
@@ -259,11 +259,11 @@
                     </div>
                     <div class="flex flex-col text-left gap-0.5">
                         <span
-                            class="text-lg sm:text-xl font-semibold tracking-wide text-zinc-100 group-hover:text-white"
+                            class="text-lg font-semibold tracking-wide text-zinc-100 group-hover:text-white"
                             >scan.pulsechain.box</span
                         >
                         <span
-                            class="text-xs sm:text-sm font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
+                            class="text-xs font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
                             >View transactions and blocks</span
                         >
                     </div>
@@ -291,7 +291,7 @@
                     </div>
                     <div class="flex flex-col text-left gap-0.5">
                         <span
-                            class="text-lg sm:text-xl font-semibold tracking-wide text-zinc-100 group-hover:text-white"
+                            class="text-lg font-semibold tracking-wide text-zinc-100 group-hover:text-white"
                             >GitHub</span
                         >
                         <span
@@ -323,7 +323,7 @@
                     </div>
                     <div class="flex flex-col text-left gap-0.5">
                         <span
-                            class="text-lg sm:text-xl font-semibold tracking-wide text-zinc-100 group-hover:text-white"
+                            class="text-lg font-semibold tracking-wide text-zinc-100 group-hover:text-white"
                             >Twitter</span
                         >
                         <span
@@ -345,7 +345,7 @@
                 href="https://launchpad.pulsechain.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="font-poppins group relative flex items-center justify-between p-2.5 sm:p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
+                class="font-poppins group relative flex items-center justify-between p-2.5 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
             >
                 <div class="flex items-center gap-5">
                     <div
@@ -355,11 +355,11 @@
                     </div>
                     <div class="flex flex-col text-left gap-0.5">
                         <span
-                            class="text-lg sm:text-xl font-semibold tracking-wide text-zinc-100 group-hover:text-white"
+                            class="text-lg font-semibold tracking-wide text-zinc-100 group-hover:text-white"
                             >Launchpad</span
                         >
                         <span
-                            class="text-xs sm:text-sm font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
+                            class="text-xs font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
                             >Run a validator</span
                         >
                     </div>
