@@ -378,7 +378,7 @@
             <div class="flex items-center justify-center gap-2">
                 <div class="">
                     © 2025 PulseChain.wtf
-                    <!-- <span class="text-lg px-2"> • </span>
+                    <span class="text-lg px-2"> • </span>
                     <a
                         href="https://github.com/jaxnalia/pulsechain.wtf"
                         target="_blank"
@@ -388,7 +388,7 @@
                     >
                         <FontAwesomeIcon icon={faGithub} class="w-3 h-3 pr-1" />
                         GitHub
-                    </a> -->
+                    </a>
                 </div>
             </div>
         </footer>
