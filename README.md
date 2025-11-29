@@ -3,7 +3,7 @@
 ### Requirements
 - Project must be on PulseChain
 - Project must be legitimate with available information
-- High-quality logo (minimum 256x256px)
+- High-quality logo (minimum 128x128px)
 
 ### Simple Process
 1. **Fork this repository**
