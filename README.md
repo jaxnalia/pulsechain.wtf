@@ -7,9 +7,8 @@
 
 ### Simple Process
 1. **Fork this repository**
-2. **Edit link list**: `blockchains/pulsechain/assets/0xYOUR_TOKEN_ADDRESS/`
-3. **Add required files**:
-   - `logo.png` (256x256px minimum, PNG format)
+2. **Edit link list**: `src/lib/data/links.json`
+3. **Add required files**: `static/logo.png` (128x128px minimum, PNG format)
 4. **Submit a pull request**
 
-We will review and merge legitimate token additions. For detailed link format, see existing links in the repository.
+We will review and merge legitimate link additions. For detailed link format, see existing links in the repository.
