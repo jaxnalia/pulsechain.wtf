@@ -1,0 +1,37 @@
+[
+    {
+        "href": "https://app.pulsex.com",
+        "title": "PulseX",
+        "description": "The most liquid DEX on PulseChain",
+        "icon": "https://app.pulsex.com/icon.png",
+        "iconType": "image"
+    },
+    {
+        "href": "https://go.hex.com",
+        "title": "HEX",
+        "description": "Miners earn on average ~36% APY",
+        "icon": "https://go.hex.com/icon.png",
+        "iconType": "image"
+    },
+    {
+        "href": "https://libertyswap.finance",
+        "title": "Liberty Swap",
+        "description": "Swap assets privately across chains",
+        "icon": "https://libertyswap.finance/android-icon-192x192.png",
+        "iconType": "image"
+    },
+    {
+        "href": "https://scan.pulsechain.box",
+        "title": "scan.pulsechain.box",
+        "description": "View transactions and blocks",
+        "icon": "https://scan.pulsechain.box/assets/configs/network_logo_dark.png",
+        "iconType": "image"
+    },
+    {
+        "href": "https://launchpad.pulsechain.com",
+        "title": "Launchpad",
+        "description": "Run a validator",
+        "icon": "rocket",
+        "iconType": "lucide"
+    }
+]

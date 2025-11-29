@@ -1,17 +1,8 @@
 <script lang="ts">
-    import {
-        Twitter,
-        Globe,
-        Mail,
-        ArrowRight,
-        Zap,
-        Activity,
-        Layers,
-        Cpu,
-        Rocket,
-    } from "lucide-svelte";
+    import { ArrowRight, Rocket } from "lucide-svelte";
     import { FontAwesomeIcon } from "@fortawesome/svelte-fontawesome";
     import { faGithub } from "@fortawesome/free-brands-svg-icons";
+    import links from "$lib/data/links.json";
 </script>
 
 <div
@@ -134,148 +125,46 @@
             </a>
 
             <!-- PulseX -->
-            <a
-                href="https://app.pulsex.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="font-poppins group relative flex items-center justify-between p-2.5 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
-            >
-                <div class="flex items-center gap-5">
-                    <div
-                        class="p-2.5 rounded-xl bg-zinc-800/50 text-zinc-400 group-hover:bg-zinc-800 group-hover:text-white transition-colors duration-300 ring-1 ring-white/5"
-                    >
-                        <img
-                            src="https://app.pulsex.com/icon.png"
-                            alt="PulseX"
-                            class="w-8 h-8"
-                        />
-                    </div>
-                    <div class="flex flex-col text-left gap-0.5">
-                        <span
-                            class="text-lg font-semibold tracking-wide text-zinc-100 group-hover:text-white"
-                            >PulseX</span
-                        >
-                        <span
-                            class="text-xs font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
-                            >The most liquid DEX on PulseChain</span
-                        >
-                    </div>
-                </div>
-
-                <div
-                    class="text-zinc-700 group-hover:text-zinc-300 transition-colors transform group-hover:translate-x-1 duration-300"
+            {#each links as link}
+                <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-poppins group relative flex items-center justify-between p-2.5 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
                 >
-                    <ArrowRight size={20} />
-                </div>
-            </a>
+                    <div class="flex items-center gap-5">
+                        <div
+                            class="p-2.5 rounded-xl bg-zinc-800/50 text-zinc-400 group-hover:bg-zinc-800 group-hover:text-white transition-colors duration-300 ring-1 ring-white/5"
+                        >
+                            {#if link.iconType === "image"}
+                                <img
+                                    src={link.icon}
+                                    alt={link.title}
+                                    class="w-8 h-8"
+                                />
+                            {:else if link.iconType === "lucide" && link.icon === "rocket"}
+                                <Rocket size={24} strokeWidth={2} />
+                            {/if}
+                        </div>
+                        <div class="flex flex-col text-left gap-0.5">
+                            <span
+                                class="text-lg font-semibold tracking-wide text-zinc-100 group-hover:text-white"
+                                >{link.title}</span
+                            >
+                            <span
+                                class="text-xs font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
+                                >{link.description}</span
+                            >
+                        </div>
+                    </div>
 
-            <!-- HEX -->
-            <a
-                href="https://go.hex.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="font-poppins group relative flex items-center justify-between p-2.5 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
-            >
-                <div class="flex items-center gap-5">
                     <div
-                        class="p-2.5 rounded-xl bg-zinc-800/50 text-zinc-400 group-hover:bg-zinc-800 group-hover:text-white transition-colors duration-300 ring-1 ring-white/5"
+                        class="text-zinc-700 group-hover:text-zinc-300 transition-colors transform group-hover:translate-x-1 duration-300"
                     >
-                        <img
-                            src="https://go.hex.com/icon.png"
-                            alt="HEX"
-                            class="w-8 h-8"
-                        />
+                        <ArrowRight size={20} />
                     </div>
-                    <div class="flex flex-col text-left gap-0.5">
-                        <span
-                            class="text-lg font-semibold tracking-wide text-zinc-100 group-hover:text-white"
-                            >HEX</span
-                        >
-                        <span
-                            class="text-xs font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
-                            >Miners earn on average ~36% APY</span
-                        >
-                    </div>
-                </div>
-
-                <div
-                    class="text-zinc-700 group-hover:text-zinc-300 transition-colors transform group-hover:translate-x-1 duration-300"
-                >
-                    <ArrowRight size={20} />
-                </div>
-            </a>
-
-            <!-- Bridge -->
-            <a
-                href="https://libertyswap.finance"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="font-poppins group relative flex items-center justify-between p-2.5 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
-            >
-                <div class="flex items-center gap-5">
-                    <div
-                        class="p-2.5 rounded-xl bg-zinc-800/50 text-zinc-400 group-hover:bg-zinc-800 group-hover:text-white transition-colors duration-300 ring-1 ring-white/5"
-                    >
-                        <img
-                            src="https://libertyswap.finance/android-icon-192x192.png"
-                            alt="Liberty Swap"
-                            class="w-8 h-8"
-                        />
-                    </div>
-                    <div class="flex flex-col text-left gap-0.5">
-                        <span
-                            class="text-lg font-semibold tracking-wide text-zinc-100 group-hover:text-white"
-                            >Liberty Swap</span
-                        >
-                        <span
-                            class="text-xs font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
-                            >Swap assets privately across chains</span
-                        >
-                    </div>
-                </div>
-
-                <div
-                    class="text-zinc-700 group-hover:text-zinc-300 transition-colors transform group-hover:translate-x-1 duration-300"
-                >
-                    <ArrowRight size={20} />
-                </div>
-            </a>
-
-            <!-- Block Explorer -->
-            <a
-                href="https://scan.pulsechain.box"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="font-poppins group relative flex items-center justify-between p-2.5 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
-            >
-                <div class="flex items-center gap-5">
-                    <div
-                        class="p-2.5 rounded-xl bg-zinc-800/50 text-zinc-400 group-hover:bg-zinc-800 group-hover:text-white transition-colors duration-300 ring-1 ring-white/5"
-                    >
-                        <img
-                            src="https://scan.pulsechain.box/assets/configs/network_logo_dark.png"
-                            alt="pulsechain.box"
-                            class="w-8 h-8"
-                        />
-                    </div>
-                    <div class="flex flex-col text-left gap-0.5">
-                        <span
-                            class="text-lg font-semibold tracking-wide text-zinc-100 group-hover:text-white"
-                            >scan.pulsechain.box</span
-                        >
-                        <span
-                            class="text-xs font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
-                            >View transactions and blocks</span
-                        >
-                    </div>
-                </div>
-
-                <div
-                    class="text-zinc-700 group-hover:text-zinc-300 transition-colors transform group-hover:translate-x-1 duration-300"
-                >
-                    <ArrowRight size={20} />
-                </div>
-            </a>
+                </a>
+            {/each}
 
             <!-- GitHub
             <a
@@ -342,36 +231,6 @@
             </a> -->
 
             <!-- Validator Info -->
-            <a
-                href="https://launchpad.pulsechain.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="font-poppins group relative flex items-center justify-between p-2.5 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 hover:bg-zinc-900 hover:border-zinc-700 transition-all duration-300 hover:shadow-xl hover:shadow-black/50"
-            >
-                <div class="flex items-center gap-5">
-                    <div
-                        class="p-3.5 rounded-xl bg-zinc-800/50 text-zinc-400 group-hover:bg-zinc-800 group-hover:text-white transition-colors duration-300 ring-1 ring-white/5"
-                    >
-                        <Rocket size={24} strokeWidth={2} />
-                    </div>
-                    <div class="flex flex-col text-left gap-0.5">
-                        <span
-                            class="text-lg font-semibold tracking-wide text-zinc-100 group-hover:text-white"
-                            >Launchpad</span
-                        >
-                        <span
-                            class="text-xs font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
-                            >Run a validator</span
-                        >
-                    </div>
-                </div>
-
-                <div
-                    class="text-zinc-700 group-hover:text-zinc-300 transition-colors transform group-hover:translate-x-1 duration-300"
-                >
-                    <ArrowRight size={20} />
-                </div>
-            </a>
         </main>
 
         <footer class="font-poppins mt-8 text-center text-zinc-600 text-sm">
