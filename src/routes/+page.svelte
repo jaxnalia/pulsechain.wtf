@@ -111,11 +111,11 @@
                         <div class="flex flex-col text-left gap-0.5">
                             <span
                                 class="text-lg font-semibold tracking-wide text-zinc-100 group-hover:text-white"
-                                >ProveX Sacrifice</span
+                                >ProveX</span
                             >
                             <span
                                 class="text-xs font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
-                                >Zero-knowledge peer-to-peer fiat onramp</span
+                                >Zero-knowledge peer-to-peer exchange</span
                             >
                         </div>
                     </div>
