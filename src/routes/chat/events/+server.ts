@@ -1,5 +1,10 @@
 import { pb } from '$lib/pocketbase';
-import { json } from '@sveltejs/kit';
+import type { Config } from '@sveltejs/kit';
+
+// Use the Vercel Edge Runtime for this endpoint
+export const config: Config = {
+  runtime: 'edge',
+};
 
 export async function GET() {
     const stream = new ReadableStream({
@@ -7,14 +12,16 @@ export async function GET() {
             // Subscribe to new messages
             const unsubscribe = await pb.collection('pulsechain_wtf_chat').subscribe('*', async ({ action, record }) => {
                 if (action === 'create') {
-                    // When a new message is created, fetch it with the user expanded
-                    const expandedRecord = await pb.collection('pulsechain_wtf_chat').getOne(record.id, {
-                        expand: 'user',
-                    });
-                    // Send the new message to the client
-                    controller.enqueue(`data: ${JSON.stringify(expandedRecord)}
-
-`);
+                    try {
+                        // When a new message is created, fetch it with the user expanded
+                        const expandedRecord = await pb.collection('pulsechain_wtf_chat').getOne(record.id, {
+                            expand: 'user',
+                        });
+                        // Send the new message to the client
+                        controller.enqueue(`data: ${JSON.stringify(expandedRecord)}\n\n`);
+                    } catch (e) {
+                        console.error("SSE: Failed to process and send record.", e);
+                    }
                 }
             });
 
@@ -23,6 +30,10 @@ export async function GET() {
                 unsubscribe();
             });
         },
+        cancel() {
+            // This is called if the client closes the connection
+            pb.collection('pulsechain_wtf_chat').unsubscribe();
+        }
     });
 
     return new Response(stream, {
