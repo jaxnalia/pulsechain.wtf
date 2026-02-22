@@ -7,32 +7,38 @@ export const config: Config = {
 };
 
 export async function GET() {
-    const stream = new ReadableStream({
-        async start(controller) {
-            // Subscribe to new messages
-            const unsubscribe = await pb.collection('pulsechain_wtf_chat').subscribe('*', async ({ action, record }) => {
-                if (action === 'create') {
-                    try {
-                        // When a new message is created, fetch it with the user expanded
-                        const expandedRecord = await pb.collection('pulsechain_wtf_chat').getOne(record.id, {
-                            expand: 'user',
-                        });
-                        // Send the new message to the client
-                        controller.enqueue(`data: ${JSON.stringify(expandedRecord)}\n\n`);
-                    } catch (e) {
-                        console.error("SSE: Failed to process and send record.", e);
-                    }
-                }
-            });
+    let intervalId: any;
 
-            // When the client disconnects, unsubscribe from the feed
-            controller.closed.then(() => {
-                unsubscribe();
-            });
+    const stream = new ReadableStream({
+        start(controller) {
+            let lastChecked = new Date().toISOString();
+
+            intervalId = setInterval(async () => {
+                try {
+                    const resultList = await pb.collection('pulsechain_wtf_chat').getList(1, 50, {
+                        filter: `created > "${lastChecked}"`,
+                        sort: 'created',
+                        expand: 'user',
+                    });
+
+                    if (resultList.items.length > 0) {
+                        for (const item of resultList.items) {
+                            controller.enqueue(`data: ${JSON.stringify(item)}\n\n`);
+                        }
+                        // Update lastChecked to the timestamp of the newest record sent
+                        lastChecked = resultList.items[resultList.items.length - 1].created;
+                    }
+                } catch (e) {
+                    // Don't log error if it's a connection closure, but handle other potential errors
+                    console.error("SSE Polling Error:", e);
+                }
+            }, 2000); // Poll every 2 seconds
         },
         cancel() {
             // This is called if the client closes the connection
-            pb.collection('pulsechain_wtf_chat').unsubscribe();
+            if (intervalId) {
+                clearInterval(intervalId);
+            }
         }
     });
 
