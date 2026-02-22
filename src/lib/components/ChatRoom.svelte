@@ -23,7 +23,7 @@
     let isLoading = true;
     let isLoadingOlder = false;
     let messageContainer: HTMLDivElement;
-    let eventSource: EventSource;
+    let pollIntervalId: any;
     let hasMoreOlderMessages = true;
 
     async function loadOlderMessages() {
@@ -44,13 +44,52 @@
             } else {
                 const oldScrollHeight = messageContainer.scrollHeight;
                 messages = [...resultList.items.reverse(), ...messages];
-                await tick();
+                await tick(); // Wait for new messages to render
                 messageContainer.scrollTop = messageContainer.scrollHeight - oldScrollHeight;
             }
         } catch (error) {
             console.error('Failed to load older messages:', error);
         } finally {
             isLoadingOlder = false;
+        }
+    }
+
+    async function pollForNewMessages() {
+        if (messages.length === 0) {
+            // If chat was empty, try a full initial load again
+            try {
+                const resultList = await pb.collection('pulsechain_wtf_chat').getList(1, 20, { sort: '-created', expand: 'user' });
+                if (resultList.items.length > 0) {
+                    messages = resultList.items.reverse();
+                    await tick();
+                    scrollToBottom();
+                }
+            } catch(e) { console.error(e); }
+            return;
+        }; 
+        
+        const latestMessageCreated = messages[messages.length - 1].created;
+        
+        try {
+            const resultList = await pb.collection('pulsechain_wtf_chat').getList(1, 50, {
+                filter: `created > "${latestMessageCreated}"`,
+                sort: 'created',
+                expand: 'user',
+            });
+
+            if (resultList.items.length > 0) {
+                const isScrolledToBottom = messageContainer.scrollHeight - messageContainer.clientHeight <= messageContainer.scrollTop + 5;
+                
+                messages = [...messages, ...resultList.items];
+
+                await tick();
+                
+                if (isScrolledToBottom) {
+                    scrollToBottom();
+                }
+            }
+        } catch (error) {
+            console.error('Polling for new messages failed:', error);
         }
     }
 
@@ -62,41 +101,26 @@
 
     onMount(async () => {
         try {
-            // Initial fetch of the last 20 messages
             const resultList = await pb.collection('pulsechain_wtf_chat').getList(1, 20, {
                 sort: '-created',
                 expand: 'user',
             });
             messages = resultList.items.reverse();
             
-            await tick();
-            scrollToBottom();
+            // Set loading to false *before* waiting for the DOM update
+            isLoading = false; 
 
-            // Connect to the SSE endpoint for real-time updates
-            eventSource = new EventSource('/chat/events');
-            eventSource.onmessage = async (event) => {
-                const newRecord: Message = JSON.parse(event.data);
-                
-                const isScrolledToBottom = messageContainer.scrollHeight - messageContainer.clientHeight <= messageContainer.scrollTop + 5;
-                
-                messages = [...messages, newRecord];
-                
-                if (isScrolledToBottom) {
-                    await tick();
-                    scrollToBottom();
-                }
-            };
+            // Wait for Svelte to render the message list
+            await tick(); 
             
-            eventSource.onerror = (err) => {
-                console.error("EventSource failed:", err);
-                eventSource.close();
-            };
-
+            // Now scroll to the bottom of the fully rendered list
+            scrollToBottom(); 
         } catch (error) {
             console.error('Initial chat load error:', error);
-        } finally {
             isLoading = false;
         }
+        
+        pollIntervalId = setInterval(pollForNewMessages, 5000);
 
         if (messageContainer) {
             messageContainer.addEventListener('scroll', handleScroll);
@@ -104,9 +128,8 @@
     });
 
     onDestroy(() => {
-        // Clean up connections
-        if (eventSource) {
-            eventSource.close();
+        if (pollIntervalId) {
+            clearInterval(pollIntervalId);
         }
         if (messageContainer) {
             messageContainer.removeEventListener('scroll', handleScroll);
@@ -122,6 +145,7 @@
                 user: $user.id,
             });
             newMessage = '';
+            await pollForNewMessages();
         } catch (error) {
             console.error('Send message error:', error);
         }
@@ -150,10 +174,6 @@
 <div class="flex flex-col h-[600px] w-full bg-zinc-950 border border-zinc-900 rounded-3xl overflow-hidden shadow-2xl">
     <div class="p-4 border-b border-zinc-900 bg-zinc-900/30 flex items-center justify-between">
         <h3 class="font-bold text-lg text-white">Community Chat</h3>
-        <div class="flex items-center gap-2">
-            <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-            <span class="text-xs text-zinc-500 font-medium">Live</span>
-        </div>
     </div>
 
     <div 
