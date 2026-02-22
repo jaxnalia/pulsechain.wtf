@@ -20,10 +20,10 @@
 
     let messages: Message[] = [];
     let newMessage = '';
-    let isLoading = true; // For initial load
-    let isLoadingOlder = false; // For loading older messages
+    let isLoading = true;
+    let isLoadingOlder = false;
     let messageContainer: HTMLDivElement;
-    let unsubscribe: () => void;
+    let eventSource: EventSource;
     let hasMoreOlderMessages = true;
 
     async function loadOlderMessages() {
@@ -41,24 +41,15 @@
 
             if (resultList.items.length === 0) {
                 hasMoreOlderMessages = false;
-                isLoadingOlder = false;
-                return;
+            } else {
+                const oldScrollHeight = messageContainer.scrollHeight;
+                messages = [...resultList.items.reverse(), ...messages];
+                await tick();
+                messageContainer.scrollTop = messageContainer.scrollHeight - oldScrollHeight;
             }
-
-            const oldScrollHeight = messageContainer.scrollHeight;
-            
-            messages = [...resultList.items.reverse(), ...messages];
-
-            // Wait for the DOM to update
-            await tick(); 
-
-            // Restore scroll position to keep it from jumping
-            messageContainer.scrollTop = messageContainer.scrollHeight - oldScrollHeight;
-            
-            isLoadingOlder = false;
-
         } catch (error) {
             console.error('Failed to load older messages:', error);
+        } finally {
             isLoadingOlder = false;
         }
     }
@@ -71,36 +62,39 @@
 
     onMount(async () => {
         try {
+            // Initial fetch of the last 20 messages
             const resultList = await pb.collection('pulsechain_wtf_chat').getList(1, 20, {
                 sort: '-created',
                 expand: 'user',
             });
-            messages = resultList.items.reverse() as Message[];
-            isLoading = false;
+            messages = resultList.items.reverse();
             
             await tick();
-            if (messageContainer) {
-                messageContainer.scrollTop = messageContainer.scrollHeight;
-            }
+            scrollToBottom();
 
-            unsubscribe = await pb.collection('pulsechain_wtf_chat').subscribe('*', async ({ action, record }) => {
-                if (action === 'create') {
-                    const expandedRecord = await pb.collection('pulsechain_wtf_chat').getOne(record.id, {
-                        expand: 'user',
-                    });
-                    
-                    const isScrolledToBottom = messageContainer.scrollHeight - messageContainer.clientHeight <= messageContainer.scrollTop + 5; // Give a 5px buffer
-                    
-                    messages = [...messages, expandedRecord as Message];
-                    
-                    if (isScrolledToBottom) {
-                        await tick();
-                        scrollToBottom();
-                    }
+            // Connect to the SSE endpoint for real-time updates
+            eventSource = new EventSource('/chat/events');
+            eventSource.onmessage = async (event) => {
+                const newRecord: Message = JSON.parse(event.data);
+                
+                const isScrolledToBottom = messageContainer.scrollHeight - messageContainer.clientHeight <= messageContainer.scrollTop + 5;
+                
+                messages = [...messages, newRecord];
+                
+                if (isScrolledToBottom) {
+                    await tick();
+                    scrollToBottom();
                 }
-            });
+            };
+            
+            eventSource.onerror = (err) => {
+                console.error("EventSource failed:", err);
+                eventSource.close();
+            };
+
         } catch (error) {
-            console.error('Chat subscription error:', error);
+            console.error('Initial chat load error:', error);
+        } finally {
             isLoading = false;
         }
 
@@ -110,7 +104,10 @@
     });
 
     onDestroy(() => {
-        if (unsubscribe) unsubscribe();
+        // Clean up connections
+        if (eventSource) {
+            eventSource.close();
+        }
         if (messageContainer) {
             messageContainer.removeEventListener('scroll', handleScroll);
         }
