@@ -153,7 +153,7 @@
         <footer class="font-poppins mt-8 text-center text-zinc-600 text-sm">
             <div class="flex items-center justify-center gap-2">
                 <div class="">
-                    © 2025 PulseChain.wtf
+                    PulseChain.wtf v1.0.0
                     <span class="text-lg px-2"> • </span>
                     <a
                         href="https://github.com/jaxnalia/pulsechain.wtf"
