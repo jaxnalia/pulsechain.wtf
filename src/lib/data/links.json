@@ -21,10 +21,10 @@
         "iconType": "image"
     },
     {
-        "href": "https://scan.pulsechain.box",
-        "title": "scan.pulsechain.box",
+        "href": "https://scan.pulsechain.com",
+        "title": "Block Explorer",
         "description": "View transactions and blocks",
-        "icon": "https://scan.pulsechain.box/assets/configs/network_logo_dark.png",
+        "icon": "https://scan.pulsechain.com/icon.png",
         "iconType": "image"
     },
     {

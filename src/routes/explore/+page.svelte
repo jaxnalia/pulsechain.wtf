@@ -61,7 +61,7 @@
             <main class="flex flex-col gap-3 w-full font-poppins animate-in fade-in slide-in-from-bottom-8 duration-700 delay-150">
                 <!-- Featured Item -->
                 <a
-                    href="https://provex.info/#/?ref=0xb770163A0CFDE7F5F3C5bd6EAb7587eC64b8837b"
+                    href="https://app.provex.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="font-poppins group relative flex items-center justify-between p-3 rounded-2xl border border-zinc-800/60 overflow-hidden transition-all duration-300 hover:border-zinc-700"
@@ -83,7 +83,7 @@
                         >
                             <img
                                 src="https://provex.info/provex.png"
-                                alt="Provex Sacrifice"
+                                alt="ProveX"
                                 class="w-8 h-8"
                             />
                         </div>

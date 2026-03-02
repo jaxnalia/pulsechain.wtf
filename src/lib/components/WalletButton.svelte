@@ -2,6 +2,7 @@
     import { user, login, isAuthenticating } from '$lib/stores/auth';
     import ProfileModal from './ProfileModal.svelte';
     import WalletRequiredModal from './WalletRequiredModal.svelte';
+    import { hasInjectedWallet } from '$lib/utils/wallet';
 
     let showProfileModal = false;
     let showWalletRequiredModal = false;
@@ -10,14 +11,7 @@
         if ($user) {
             showProfileModal = true;
         } else {
-            // Check if there is an injected wallet provider (e.g. window.ethereum)
-            const hasWallet = typeof window !== 'undefined' && (
-                window.ethereum !== undefined || 
-                (window as any).phantom?.ethereum !== undefined ||
-                (window as any).rabby !== undefined
-            );
-
-            if (hasWallet) {
+            if (hasInjectedWallet()) {
                 login();
             } else {
                 showWalletRequiredModal = true;
