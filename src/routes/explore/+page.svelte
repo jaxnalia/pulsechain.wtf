@@ -61,7 +61,7 @@
             <main class="flex flex-col gap-3 w-full font-poppins animate-in fade-in slide-in-from-bottom-8 duration-700 delay-150">
                 <!-- Featured Item -->
                 <a
-                    href="https://app.provex.com/"
+                    href="https://pai-mkr.pages.dev/"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="font-poppins group relative flex items-center justify-between p-3 rounded-2xl border border-zinc-800/60 overflow-hidden transition-all duration-300 hover:border-zinc-700"
@@ -82,19 +82,19 @@
                             class="p-2.5 rounded-xl bg-zinc-800/50 text-zinc-400 group-hover:bg-zinc-800 group-hover:text-white transition-colors duration-300"
                         >
                             <img
-                                src="https://provex.info/provex.png"
-                                alt="ProveX"
-                                class="w-8 h-8"
+                                src="https://pai-mkr.pages.dev/0xc40c58afff0a8908c392a752f4951eff381aa0b2.png"
+                                alt="PulseMaker"
+                                class="w-8 h-8 rounded-3xl"
                             />
                         </div>
                         <div class="flex flex-col text-left gap-0.5">
                             <span
                                 class="text-lg font-semibold tracking-wide text-zinc-100 group-hover:text-white"
-                                >ProveX</span
+                                >PulseMaker</span
                             >
                             <span
                                 class="text-xs font-semibold text-zinc-500 group-hover:text-zinc-400 transition-colors"
-                                >Zero-knowledge peer-to-peer exchange</span
+                                >Decentralized multi-collateral stablecoin</span
                             >
                         </div>
                     </div>

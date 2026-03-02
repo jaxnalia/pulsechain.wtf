@@ -1,5 +1,12 @@
 [
     {
+        "href": "https://app.provex.com",
+        "title": "ProveX",
+        "description": "Zero-knowledge peer-to-peer exchange",
+        "icon": "https://provex.info/provex.png",
+        "iconType": "image"
+    },
+    {
         "href": "https://app.pulsex.com",
         "title": "PulseX",
         "description": "The most liquid DEX on PulseChain",
